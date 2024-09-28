@@ -70,7 +70,7 @@ class crud
         $sql = "UPDATE users SET is_admin = CASE WHEN is_admin = 0 THEN 1 WHEN is_admin = 1 THEN 0 END WHERE id = ?";
         try {
             $stmt = $this->pdo->prepare($sql);
-            if ($stmt->execute([$data->User_ID])) {
+            if ($stmt->execute([$data->id])) {
                 return "Updated Successfully";
             } else {
                 return "Update Failed!";
